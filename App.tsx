@@ -13,6 +13,10 @@ const App: React.FC = () => {
     }
   };
 
+  const handleBuyClick = () => {
+    window.location.href = "https://pay.hotmart.com/W104065085Q";
+  };
+
   return (
     <div className="min-h-screen bg-[#FDFBF7] font-sans selection:bg-brand-green selection:text-white">
       
@@ -235,17 +239,29 @@ const App: React.FC = () => {
       </section>
 
       {/* --- OFFER SECTION (PRICING) --- */}
-      <section id="offer" className="py-20 bg-[#cbceae] text-gray-800 relative overflow-hidden">
+      <section id="offer" className="py-12 bg-[#cbceae] text-gray-800 relative overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-white/20 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/20 rounded-full translate-x-1/3 translate-y-1/3"></div>
 
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-          <h2 className="font-serif text-4xl md:text-5xl font-bold mb-4 text-brand-green">ENSALADAS EN FRASCO</h2>
-          <h3 className="text-2xl font-light mb-12 tracking-widest">+ ADEREZOS IRRESISTIBLES</h3>
+          
+          <div className="bg-[#fff7e7] text-gray-800 rounded-2xl shadow-2xl p-6 md:p-8 max-w-2xl mx-auto border-4 border-yellow-400">
+            
+            <div className="mb-4 text-center">
+              <h2 className="font-serif text-3xl md:text-5xl font-bold mb-2 text-brand-green leading-tight">ENSALADAS EN FRASCO</h2>
+              <h3 className="text-xl md:text-2xl font-light tracking-widest text-gray-600">+ ADEREZOS IRRESISTIBLES</h3>
+            </div>
 
-          <div className="bg-white text-gray-800 rounded-2xl shadow-2xl p-8 md:p-12 max-w-2xl mx-auto border-4 border-yellow-400">
-            <ul className="text-left space-y-3 mb-8 border-b border-gray-200 pb-8">
+            <div className="mb-4 flex justify-center">
+              <img 
+                src="https://res.cloudinary.com/dvg6hojfs/image/upload/v1769280711/ChatGPT_Image_24_de_jan._de_2026_15_50_49_dybfkk.png" 
+                alt="Pack Completo de Recetas" 
+                className="w-3/4 md:w-2/3 h-auto transform hover:scale-105 transition-transform"
+              />
+            </div>
+
+            <ul className="text-left space-y-3 mb-6 border-b border-gray-200 pb-6">
               <li className="flex items-center gap-2"><CheckCircle className="text-green-600" size={20}/><span className="font-bold">60 RECETAS DE ENSALADAS</span></li>
               <li className="flex items-center gap-2"><CheckCircle className="text-green-600" size={20}/><span className="font-bold">RECETAS DE ADEREZOS</span></li>
               <li className="flex items-center gap-2"><CheckCircle className="text-green-600" size={20}/><span>20 RECETAS DE SMOOTHIES</span></li>
@@ -253,7 +269,7 @@ const App: React.FC = () => {
               <li className="flex items-center gap-2"><CheckCircle className="text-green-600" size={20}/><span>15 RECETAS DE AGUAS SABORIZADAS</span></li>
             </ul>
 
-            <div className="mb-8">
+            <div className="mb-6">
               <span className="block text-gray-400 line-through text-lg">De $97</span>
               <div className="flex flex-col items-center justify-center">
                 <span className="text-xl text-brand-green font-bold">por solo</span>
@@ -263,7 +279,13 @@ const App: React.FC = () => {
             </div>
 
             {/* Changed variant to cta for brighter green */}
-            <Button size="lg" variant="cta" fullWidth className="text-xl py-6 animate-pulse">
+            <Button 
+              size="lg" 
+              variant="cta" 
+              fullWidth 
+              className="text-xl py-6 animate-pulse"
+              onClick={handleBuyClick}
+            >
               ¡COMPRAR AHORA!
             </Button>
             <p className="text-xs text-red-500 font-bold mt-4 uppercase">** La oferta expira hoy **</p>
