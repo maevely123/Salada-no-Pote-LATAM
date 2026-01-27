@@ -96,19 +96,19 @@ export const FAQ_ITEMS: FaqItem[] = [
     answer: "¡Sí! Ofrecemos una garantía incondicional de 7 días. Si no te gusta, te devolvemos tu dinero."
   },
   {
-    question: "¿Necesito frascos especiales?",
-    answer: "¡No! El método funciona con cualquier frasco de vidrio que tenga buen cierre, incluso frascos reutilizados de conserva."
+    question: "¿Necesito envases especiales?",
+    answer: "¡No! El método funciona con cualquier envase de vidrio que tenga buen cierre, incluso envases reutilizados de conserva."
   },
   {
     question: "¿Las recetas incluyen los aderezos?",
     answer: "Sí, todas las ensaladas vienen con recetas exclusivas de aderezos que combinan perfectamente con los ingredientes."
   },
   {
-    question: "¿Cuánto tiempo dura la ensalada en frasco en el refrigerador?",
+    question: "¿Cuánto tiempo dura la ensalada en envase en el refrigerador?",
     answer: "Si se monta correctamente siguiendo nuestro método de capas, duran hasta 7 días frescas."
   },
   {
-    question: "¿Puedo vender ensaladas en frasco? ¿Cuánto puedo cobrar?",
+    question: "¿Puedo vender ensaladas en envase? ¿Cuánto puedo cobrar?",
     answer: "¡Por supuesto! Muchos alumnos usan las recetas para ingresos extra. El precio varía por región, pero enseñamos a poner precio."
   },
   {
