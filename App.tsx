@@ -31,7 +31,7 @@ const App: React.FC = () => {
               ensaladas
             </h1>
             <span className="font-serif text-4xl md:text-6xl italic font-bold text-brand-green/90 leading-tight mb-2">
-              en envase
+              en frasco
             </span>
             <span className="font-sans text-xl md:text-2xl font-extrabold text-[#5c7a52] uppercase tracking-[0.25em] mt-1 border-t border-brand-green/30 pt-2">
               + aderezos
@@ -47,7 +47,7 @@ const App: React.FC = () => {
           <div className="relative max-w-md mx-auto mb-10 group cursor-pointer">
             <img 
               src="https://res.cloudinary.com/dvg6hojfs/image/upload/v1769131619/Design_sem_nome_-_2026-01-22T220511.058_sml922.png" 
-              alt="Ensalada en Envase Gigante" 
+              alt="Ensalada en Frasco Gigante" 
               className="rounded-2xl shadow-2xl transform rotate-[-2deg] border-4 border-white mx-auto"
             />
             <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-full shadow-lg animate-bounce hidden md:block">
@@ -70,7 +70,7 @@ const App: React.FC = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center mt-10">
             <div className="text-left space-y-4 bg-white p-8 rounded-xl shadow-sm">
               {[
-                "Funciona con cualquier envase",
+                "Funciona con cualquier frasco",
                 "60 ensaladas deliciosas",
                 "Aderezos irresistibles",
                 "El secreto de las capas",
@@ -249,7 +249,7 @@ const App: React.FC = () => {
           <div className="bg-[#fff7e7] text-gray-800 rounded-2xl shadow-2xl p-6 md:p-8 max-w-2xl mx-auto border-4 border-yellow-400">
             
             <div className="mb-4 text-center">
-              <h2 className="font-serif text-3xl md:text-5xl font-bold mb-2 text-brand-green leading-tight">ENSALADAS EN ENVASE</h2>
+              <h2 className="font-serif text-3xl md:text-5xl font-bold mb-2 text-brand-green leading-tight">ENSALADAS EN FRASCO</h2>
               <h3 className="text-xl md:text-2xl font-light tracking-widest text-gray-600">+ ADEREZOS IRRESISTIBLES</h3>
             </div>
 
@@ -314,7 +314,7 @@ const App: React.FC = () => {
             <h2 className="font-serif text-4xl font-bold text-gray-800 mb-6">LUCÍA FERNÁNDEZ</h2>
             <div className="w-20 h-1 bg-brand-green mb-6"></div>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Mis recetas de Ensaladas en Envase y Aderezos Irresistibles siempre han tenido éxito en internet. Decidí reunir las 60 mejores recetas en un solo lugar y compartir este conocimiento contigo también.
+              Mis recetas de Ensaladas en Frasco y Aderezos Irresistibles siempre han tenido éxito en internet. Decidí reunir las 60 mejores recetas en un solo lugar y compartir este conocimiento contigo también.
             </p>
             <p className="text-gray-700 leading-relaxed font-bold">
               Mi misión es mostrar que comer saludable puede ser práctico, delicioso y económico.
