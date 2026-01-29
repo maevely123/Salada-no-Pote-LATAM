@@ -17,6 +17,10 @@ const App: React.FC = () => {
     window.location.href = "https://pay.hotmart.com/W104065085Q";
   };
 
+  // Detect if we are on page 2 to show the discounted price
+  const isPage2 = typeof window !== 'undefined' && window.location.pathname.includes('pagina2');
+  const price = isPage2 ? "$7" : "$9,90";
+
   return (
     <div className="min-h-screen bg-[#FDFBF7] font-sans selection:bg-brand-green selection:text-white">
       
@@ -273,7 +277,7 @@ const App: React.FC = () => {
               <span className="block text-gray-400 line-through text-lg">De $97</span>
               <div className="flex flex-col items-center justify-center">
                 <span className="text-xl text-brand-green font-bold">por solo</span>
-                <span className="text-6xl font-black text-brand-cta tracking-tighter">$9,90</span>
+                <span className="text-6xl font-black text-brand-cta tracking-tighter">{price}</span>
                 <span className="text-sm text-gray-500 mt-2 max-w-xs mx-auto">El valor será convertido automáticamente a la moneda de tu país al momento del pago.</span>
               </div>
             </div>
