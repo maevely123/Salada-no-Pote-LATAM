@@ -31,20 +31,22 @@ const App: React.FC = () => {
       {/* --- HERO SECTION --- */}
       <header className="relative bg-[#cbceae] overflow-hidden">
         <div className="absolute top-0 w-full h-4 bg-brand-green/10"></div>
-        <div className="max-w-6xl mx-auto px-4 pt-12 pb-20 text-center relative z-10">
+        <div className={`max-w-6xl mx-auto px-4 text-center relative z-10 ${isPage2 ? 'pt-8 pb-16' : 'pt-12 pb-20'}`}>
           
           {/* Typography updated for high visibility */}
-          <div className="flex flex-col items-center mb-10 scale-105 md:scale-110 origin-top">
-            <h1 className="font-serif text-6xl md:text-8xl font-black text-brand-green leading-[0.85] drop-shadow-sm tracking-tight mb-1">
-              ensaladas
-            </h1>
-            <span className="font-serif text-4xl md:text-6xl italic font-bold text-brand-green/90 leading-tight mb-2">
-              en frasco
-            </span>
-            <span className="font-sans text-xl md:text-2xl font-extrabold text-[#5c7a52] uppercase tracking-[0.25em] mt-1 border-t border-brand-green/30 pt-2">
-              + aderezos
-            </span>
-          </div>
+          {!isPage2 && (
+            <div className="flex flex-col items-center mb-10 scale-105 md:scale-110 origin-top">
+              <h1 className="font-serif text-6xl md:text-8xl font-black text-brand-green leading-[0.85] drop-shadow-sm tracking-tight mb-1">
+                ensaladas
+              </h1>
+              <span className="font-serif text-4xl md:text-6xl italic font-bold text-brand-green/90 leading-tight mb-2">
+                en frasco
+              </span>
+              <span className="font-sans text-xl md:text-2xl font-extrabold text-[#5c7a52] uppercase tracking-[0.25em] mt-1 border-t border-brand-green/30 pt-2">
+                + aderezos
+              </span>
+            </div>
+          )}
           
           <h2 className="text-xl md:text-3xl text-gray-800 max-w-4xl mx-auto mb-12 font-medium leading-relaxed">
             {isPage2 ? (
