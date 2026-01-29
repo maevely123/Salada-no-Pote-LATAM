@@ -9,6 +9,10 @@ const App: React.FC = () => {
   // Detect if we are on page 2 to show the discounted price
   const isPage2 = typeof window !== 'undefined' && window.location.pathname.includes('pagina2');
   const price = isPage2 ? "$7" : "$9,90";
+  
+  // On page 2, all buttons should use the 'cta' variant (bright green)
+  // On page 1, they default to 'primary' (dark green) unless specified otherwise
+  const defaultButtonVariant = isPage2 ? 'cta' : 'primary';
 
   const scrollToOffer = () => {
     const offerSection = document.getElementById('offer');
@@ -84,7 +88,12 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <Button size="lg" onClick={scrollToOffer} className="shadow-brand-green/30 shadow-xl animate-pulse">
+          <Button 
+            size="lg" 
+            variant={defaultButtonVariant} 
+            onClick={scrollToOffer} 
+            className="shadow-brand-green/30 shadow-xl animate-pulse"
+          >
             ¡QUIERO LAS RECETAS!
           </Button>
         </div>
@@ -122,7 +131,7 @@ const App: React.FC = () => {
             </div>
           </div>
           <div className="mt-12">
-            <Button onClick={scrollToOffer}>¡QUIERO LAS RECETAS!</Button>
+            <Button variant={defaultButtonVariant} onClick={scrollToOffer}>¡QUIERO LAS RECETAS!</Button>
           </div>
         </div>
       </section>
@@ -144,8 +153,7 @@ const App: React.FC = () => {
           </div>
 
           <div className="text-center mt-16">
-            {/* Removed variant="danger" to make it green (default) */}
-            <Button size="lg" onClick={scrollToOffer}>
+            <Button size="lg" variant={defaultButtonVariant} onClick={scrollToOffer}>
               ¡QUIERO LAS RECETAS!
             </Button>
           </div>
@@ -235,7 +243,7 @@ const App: React.FC = () => {
           </div>
           
           <div className="mt-12 text-center">
-             <Button onClick={scrollToOffer}>¡QUIERO MIS BONOS!</Button>
+             <Button variant={defaultButtonVariant} onClick={scrollToOffer}>¡QUIERO MIS BONOS!</Button>
           </div>
         </div>
       </section>
@@ -303,7 +311,15 @@ const App: React.FC = () => {
               <div className="flex flex-col items-center justify-center">
                 <span className="text-xl text-brand-green font-bold">por solo</span>
                 <span className="text-6xl font-black text-brand-cta tracking-tighter">{price}</span>
-                <span className="text-sm text-gray-500 mt-2 max-w-xs mx-auto">El valor será convertido automáticamente a la moneda de tu país al momento del pago.</span>
+                {isPage2 ? (
+                   <div className="mt-4 bg-brand-green/10 p-3 rounded-lg border border-brand-green/20 max-w-sm mx-auto">
+                     <p className="text-sm md:text-base text-[#2a3d24] font-bold leading-tight">
+                        El valor será convertido automáticamente a la moneda de tu país al momento del pago.
+                     </p>
+                   </div>
+                ) : (
+                   <span className="text-sm text-gray-500 mt-2 max-w-xs mx-auto">El valor será convertido automáticamente a la moneda de tu país al momento del pago.</span>
+                )}
               </div>
             </div>
 
