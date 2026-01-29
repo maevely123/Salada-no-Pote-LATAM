@@ -100,12 +100,22 @@ const App: React.FC = () => {
       </header>
 
       {/* --- BENEFITS SECTION --- */}
-      <section className="py-16 bg-[#fff7e7]">
+      <section className="py-16 bg-[#fff7e8]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-brand-green mb-2 uppercase">
             Lo que vas a encontrar:
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 items-center mt-10">
+          
+          {/* Small image added as requested - Removed mix-blend-multiply to prevent dark border artifact on cream background */}
+          <div className="flex justify-center mt-4 mb-6">
+             <img 
+                src="https://res.cloudinary.com/dvg6hojfs/image/upload/v1769280711/ChatGPT_Image_24_de_jan._de_2026_15_50_49_dybfkk.png" 
+                alt="Pack Completo" 
+                className="w-40 md:w-56 h-auto"
+              />
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center mt-6">
             <div className="text-left space-y-4 bg-white p-8 rounded-xl shadow-sm">
               {[
                 "Funciona con cualquier frasco",
@@ -114,7 +124,8 @@ const App: React.FC = () => {
                 "El secreto de las capas",
                 "Conservación por 7 días",
                 "Listas en 30 minutos",
-                "Paso a paso de preparación"
+                "Paso a paso de preparación",
+                "3 Bonos Especiales"
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <CheckCircle className="text-brand-green flex-shrink-0" size={24} />
@@ -318,7 +329,11 @@ const App: React.FC = () => {
                      </p>
                    </div>
                 ) : (
-                   <span className="text-sm text-gray-500 mt-2 max-w-xs mx-auto">El valor será convertido automáticamente a la moneda de tu país al momento del pago.</span>
+                   <div className="mt-3 bg-white/50 p-3 rounded-lg border-2 border-brand-green/10 max-w-xs mx-auto shadow-sm">
+                      <p className="text-sm font-bold text-gray-800 leading-tight">
+                        El valor será convertido automáticamente a la moneda de tu país al momento del pago.
+                      </p>
+                   </div>
                 )}
               </div>
             </div>
