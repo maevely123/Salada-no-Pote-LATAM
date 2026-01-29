@@ -6,6 +6,10 @@ import { Accordion } from './components/Accordion';
 import { RECIPES, BONUSES, FAQ_ITEMS } from './constants';
 
 const App: React.FC = () => {
+  // Detect if we are on page 2 to show the discounted price
+  const isPage2 = typeof window !== 'undefined' && window.location.pathname.includes('pagina2');
+  const price = isPage2 ? "$7" : "$9,90";
+
   const scrollToOffer = () => {
     const offerSection = document.getElementById('offer');
     if (offerSection) {
@@ -14,12 +18,12 @@ const App: React.FC = () => {
   };
 
   const handleBuyClick = () => {
-    window.location.href = "https://pay.hotmart.com/W104065085Q";
+    if (isPage2) {
+      window.location.href = "https://pay.hotmart.com/W104065085Q?off=8arwxffd";
+    } else {
+      window.location.href = "https://pay.hotmart.com/W104065085Q";
+    }
   };
-
-  // Detect if we are on page 2 to show the discounted price
-  const isPage2 = typeof window !== 'undefined' && window.location.pathname.includes('pagina2');
-  const price = isPage2 ? "$7" : "$9,90";
 
   return (
     <div className="min-h-screen bg-[#FDFBF7] font-sans selection:bg-brand-green selection:text-white">
@@ -43,9 +47,28 @@ const App: React.FC = () => {
           </div>
           
           <h2 className="text-xl md:text-3xl text-gray-800 max-w-4xl mx-auto mb-12 font-medium leading-relaxed">
-            <span className="font-black text-3xl md:text-4xl text-[#2a3d24]">60 RECETAS</span> para que las prepares en tu casa y nunca más te quedes sin ensalada lista en el refrigerador, 
-            <br className="hidden md:block"/>
-            <span className="inline-block bg-brand-green text-white px-4 py-1 rounded-lg font-bold shadow-lg transform -rotate-2 mt-3 md:mt-2 hover:scale-105 transition-transform cursor-default border-2 border-[#3a5230]">¡7 días sin marchitarse!</span>
+            {isPage2 ? (
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-gray-600 font-medium text-lg md:text-xl tracking-wide uppercase opacity-80">
+                  Aprende recetas de
+                </span>
+                <span className="font-black text-3xl md:text-5xl text-[#2a3d24] leading-tight uppercase tracking-tight">
+                  Ensaladas y Aderezos <span className="text-brand-green underline decoration-brand-cta/50 decoration-4 underline-offset-4">Deliciosos</span>
+                </span>
+                <span className="text-gray-700 text-lg md:text-2xl mt-1 font-medium">
+                  para preparar en casa, que duran
+                </span>
+                <span className="inline-block bg-brand-cta text-white px-8 py-3 rounded-full font-black shadow-xl transform -rotate-1 mt-5 text-xl md:text-3xl border-4 border-white ring-4 ring-brand-cta/30 hover:scale-105 transition-transform duration-300">
+                  ¡HASTA 7 DÍAS SIN MARCHITARSE!
+                </span>
+              </div>
+            ) : (
+              <>
+                <span className="font-black text-3xl md:text-4xl text-[#2a3d24]">60 RECETAS</span> para que las prepares en tu casa y nunca más te quedes sin ensalada lista en el refrigerador, 
+                <br className="hidden md:block"/>
+                <span className="inline-block bg-brand-green text-white px-4 py-1 rounded-lg font-bold shadow-lg transform -rotate-2 mt-3 md:mt-2 hover:scale-105 transition-transform cursor-default border-2 border-[#3a5230]">¡7 días sin marchitarse!</span>
+              </>
+            )}
           </h2>
 
           <div className="relative max-w-md mx-auto mb-10 group cursor-pointer">
