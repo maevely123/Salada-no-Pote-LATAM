@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingCart, CheckCircle, ArrowDown, Play, Star, AlertCircle } from 'lucide-react';
+import { ShoppingCart, CheckCircle, ArrowDown, Play, Star, AlertCircle, ShieldCheck, Mail } from 'lucide-react';
 import { Button } from './components/Button';
 import { RecipeCard } from './components/RecipeCard';
 import { Accordion } from './components/Accordion';
@@ -336,10 +336,19 @@ const App: React.FC = () => {
             <p className="text-xs text-red-500 font-bold mt-4 uppercase">** La oferta expira hoy **</p>
           </div>
           
-          <div className="mt-8 flex justify-center gap-4 text-gray-700 text-sm font-semibold">
-            <span className="flex items-center gap-1"><ShoppingCart size={14}/> Compra Segura</span>
-            <span className="flex items-center gap-1"><Star size={14}/> Acceso Inmediato</span>
-            <span className="flex items-center gap-1"><CheckCircle size={14}/> 7 Días de Garantia</span>
+          <div className="mt-8 flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 opacity-90">
+             <div className="flex items-center gap-2 text-gray-800">
+                <ShoppingCart size={18} className="text-brand-green" />
+                <span className="text-sm font-bold uppercase tracking-wide">Compra Segura</span>
+             </div>
+             <div className="flex items-center gap-2 text-gray-800">
+                <Mail size={18} className="text-brand-green" />
+                <span className="text-sm font-bold uppercase tracking-wide">Acceso Inmediato</span>
+             </div>
+             <div className="flex items-center gap-2 text-gray-800">
+                <ShieldCheck size={18} className="text-brand-green" />
+                <span className="text-sm font-bold uppercase tracking-wide">7 Días de Garantía</span>
+             </div>
           </div>
         </div>
       </section>
