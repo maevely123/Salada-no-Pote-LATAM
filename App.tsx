@@ -59,10 +59,7 @@ const App: React.FC = () => {
                   Aprende recetas de
                 </span>
                 <span className="font-black text-3xl md:text-5xl text-[#2a3d24] leading-tight uppercase tracking-tight">
-                  Ensaladas y Aderezos <span className="text-brand-green underline decoration-brand-cta/50 decoration-4 underline-offset-4">Deliciosos</span>
-                </span>
-                <span className="text-gray-700 text-lg md:text-2xl mt-1 font-medium">
-                  para preparar en casa, que duran
+                  Ensaladas y Aderezos <span className="text-brand-green underline decoration-brand-cta/50 decoration-4 underline-offset-4">Deliciosos en casa</span>
                 </span>
                 <span className="inline-block bg-brand-cta text-white px-6 py-2 md:px-8 md:py-3 rounded-lg font-black shadow-md transform -rotate-2 mt-5 text-xl md:text-3xl border-2 border-dashed border-white/50 cursor-default">
                   ¡HASTA 7 DÍAS SIN MARCHITARSE!
