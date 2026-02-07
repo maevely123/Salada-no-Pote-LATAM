@@ -64,7 +64,7 @@ const App: React.FC = () => {
                 <span className="text-gray-700 text-lg md:text-2xl mt-1 font-medium">
                   para preparar en casa, que duran
                 </span>
-                <span className="inline-block bg-brand-cta text-white px-8 py-3 rounded-full font-black shadow-xl transform -rotate-1 mt-5 text-xl md:text-3xl border-4 border-white ring-4 ring-brand-cta/30 hover:scale-105 transition-transform duration-300">
+                <span className="inline-block bg-brand-cta text-white px-6 py-2 md:px-8 md:py-3 rounded-lg font-black shadow-md transform -rotate-2 mt-5 text-xl md:text-3xl border-2 border-dashed border-white/50 cursor-default">
                   ¡HASTA 7 DÍAS SIN MARCHITARSE!
                 </span>
               </div>
