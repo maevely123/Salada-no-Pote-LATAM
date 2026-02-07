@@ -31,6 +31,19 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#FDFBF7] font-sans selection:bg-brand-green selection:text-white">
+      <style>{`
+        @keyframes border-march {
+          0% {
+            stroke-dashoffset: 0;
+          }
+          100% {
+            stroke-dashoffset: 24;
+          }
+        }
+        .animate-border-march {
+          animation: border-march 1s linear infinite;
+        }
+      `}</style>
       
       {/* --- HERO SECTION --- */}
       <header className="relative bg-[#cbceae] overflow-hidden">
@@ -61,8 +74,25 @@ const App: React.FC = () => {
                 <span className="font-black text-3xl md:text-5xl text-[#2a3d24] leading-tight uppercase tracking-tight">
                   Ensaladas y Aderezos <span className="text-brand-green underline decoration-brand-cta/50 decoration-4 underline-offset-4">Deliciosos en casa</span>
                 </span>
-                <span className="inline-block bg-brand-cta text-white px-6 py-2 md:px-8 md:py-3 rounded-lg font-black shadow-md transform -rotate-2 mt-5 text-xl md:text-3xl border-2 border-dashed border-white/50 cursor-default">
-                  ¡HASTA 7 DÍAS SIN MARCHITARSE!
+                
+                {/* Animated Badge */}
+                <span className="relative inline-block bg-brand-cta text-white px-6 py-2 md:px-8 md:py-3 rounded-lg font-black shadow-md transform -rotate-2 mt-5 text-xl md:text-3xl cursor-default">
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none rounded-lg" style={{overflow: 'visible'}}>
+                    <rect 
+                      x="2" 
+                      y="2" 
+                      width="calc(100% - 4px)" 
+                      height="calc(100% - 4px)" 
+                      rx="8" 
+                      stroke="white" 
+                      strokeWidth="2.5" 
+                      strokeLinecap="round" 
+                      strokeDasharray="12 12" 
+                      fill="none" 
+                      className="animate-border-march opacity-90"
+                    />
+                  </svg>
+                  <span className="relative z-10">¡HASTA 7 DÍAS SIN MARCHITARSE!</span>
                 </span>
               </div>
             ) : (
