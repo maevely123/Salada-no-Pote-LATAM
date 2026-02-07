@@ -342,6 +342,9 @@ const App: React.FC = () => {
               <li className="flex items-center gap-2"><CheckCircle className="text-green-600" size={20}/><span>20 RECETAS DE SMOOTHIES</span></li>
               <li className="flex items-center gap-2"><CheckCircle className="text-green-600" size={20}/><span>5 RECETAS DE SHOTS MATUTINOS</span></li>
               <li className="flex items-center gap-2"><CheckCircle className="text-green-600" size={20}/><span>15 RECETAS DE AGUAS SABORIZADAS</span></li>
+              {isPage2 && (
+                 <li className="flex items-center gap-2"><CheckCircle className="text-green-600" size={20}/><span className="font-bold">Garantía de 30 días</span></li>
+              )}
             </ul>
 
             <div className="mb-6">
@@ -438,6 +441,23 @@ const App: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* --- WARRANTY SECTION --- */}
+      <section className="py-16 bg-[#FDFBF7]">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <div className="flex justify-center mb-6">
+            <ShieldCheck size={64} className="text-brand-green" />
+          </div>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-gray-800 mb-6 uppercase">
+            GARANTÍA INCONDICIONAL DE {isPage2 ? "30" : "7"} DÍAS
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
+            Tienes {isPage2 ? "30" : "7"} días completos para probar todas las recetas de Ensaladas en Frasco. 
+            Si por cualquier motivo no estás satisfecho/a, te devolvemos el 100% de tu dinero. 
+            Sin preguntas y sin complicaciones. Tu riesgo es CERO.
+          </p>
         </div>
       </section>
 
