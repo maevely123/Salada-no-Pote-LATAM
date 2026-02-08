@@ -60,5 +60,80 @@ fbq('track', 'PageView');
     <!-- End Meta Pixel Code (noscript) -->
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
+    <script>
+    (function () {
+
+      // =========================
+      // 1. CONFIGURE SEUS LINKS
+      // =========================
+      const checkoutLinks = {
+        produto1: "https://pay.hotmart.com/W104065085Q?off=8arwxffd",
+        produto2: "https://pay.hotmart.com/W104065085Q?off=b2x9zpxf",
+      };
+
+      const utmKeys = [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_content",
+        "utm_term",
+        "sck"
+      ];
+
+      // =========================
+      // 2. COOKIE UTILS
+      // =========================
+      function setCookie(name, value, days) {
+        const d = new Date();
+        d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie = name + "=" + encodeURIComponent(value) + ";expires=" + d.toUTCString() + ";path=/";
+      }
+
+      function getCookie(name) {
+        const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+        return match ? decodeURIComponent(match[2]) : null;
+      }
+
+      // =========================
+      // 3. CAPTURA UTMs
+      // =========================
+      const urlParams = new URLSearchParams(window.location.search);
+
+      utmKeys.forEach(key => {
+        const value = urlParams.get(key);
+        if (value) {
+          localStorage.setItem(key, value);
+          setCookie(key, value, 30);
+        }
+      });
+
+      function getUTM(key) {
+        return localStorage.getItem(key) || getCookie(key);
+      }
+
+      function buildUTMQuery() {
+        const query = [];
+        utmKeys.forEach(key => {
+          const value = getUTM(key);
+          if (value) query.push(key + "=" + encodeURIComponent(value));
+        });
+        return query.length ? "?" + query.join("&") : "";
+      }
+
+      // =========================
+      // 4. FUNÇÃO DE REDIRECIONAMENTO
+      // =========================
+      window.goToCheckout = function (produto) {
+        const baseUrl = checkoutLinks[produto];
+        if (!baseUrl) return;
+
+        const utmQuery = buildUTMQuery();
+        const finalUrl = baseUrl + (baseUrl.includes("?") ? "&" + utmQuery.substring(1) : utmQuery);
+
+        window.location.href = finalUrl;
+      };
+
+    })();
+    </script>
   </body>
 </html>

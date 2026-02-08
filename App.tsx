@@ -22,10 +22,17 @@ const App: React.FC = () => {
   };
 
   const handleBuyClick = () => {
-    if (isPage2) {
-      window.location.href = "https://pay.hotmart.com/W104065085Q?off=8arwxffd";
+    const win = window as any;
+    if (typeof win.goToCheckout === 'function') {
+      // product1 for Page 2 ($7), product2 for Page 1 ($9.90)
+      win.goToCheckout(isPage2 ? 'produto1' : 'produto2');
     } else {
-      window.location.href = "https://pay.hotmart.com/W104065085Q";
+      // Fallback in case script didn't load
+      if (isPage2) {
+        window.location.href = "https://pay.hotmart.com/W104065085Q?off=8arwxffd";
+      } else {
+        window.location.href = "https://pay.hotmart.com/W104065085Q?off=b2x9zpxf";
+      }
     }
   };
 
